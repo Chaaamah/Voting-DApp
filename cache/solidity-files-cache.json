@@ -38,8 +38,8 @@
       ]
     },
     "C:\\Users\\microsoft\\OneDrive\\Desktop\\Studies\\Stockage des donnees\\TP-DAPPS\\contracts\\Voting.sol": {
-      "lastModificationDate": 1744991092961,
-      "contentHash": "7d6dab95795a46a64e36129221762183",
+      "lastModificationDate": 1746195875553,
+      "contentHash": "6d8b40beadf320e704a5bb16dee01f7e",
       "sourceName": "contracts/Voting.sol",
       "solcConfig": {
         "version": "0.8.28",
@@ -67,7 +67,7 @@
       },
       "imports": [],
       "versionPragmas": [
-        ">=0.7.0 <0.9.0"
+        "^0.8.28"
       ],
       "artifacts": [
         "Voting"

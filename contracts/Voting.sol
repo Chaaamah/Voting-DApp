@@ -23,7 +23,7 @@ contract Voting{
         owner = msg.sender;
     }
       
-    function addCondidate(string memory _name) public onlyOwner{
+    function addCandidate(string memory _name) public onlyOwner{
            condidates[numberOfCondidates] = Condidate(_name, 0);
            numberOfCondidates++;
     }

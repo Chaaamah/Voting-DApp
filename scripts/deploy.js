@@ -4,16 +4,25 @@ async function main() {
     console.log("Deploying contracts with the account:", deployer.address);
 
     const Voting = await ethers.getContractFactory("Voting");
-    const voting = await Voting.deploy();
-    //? console.log('====================================');
-    //? console.log(voting);
-    //? console.log('====================================');
-    //? await voting.deploy();
-    console.log("Voting contract deployed to:", voting.address);
-}
+    const contract = await Voting.deploy();
+    await contract.waitForDeployment();
+    
+    const address = await contract.getAddress();
+    console.log("Contract deployed to:", address);
 
-main().then(() => process.exit(0))
-.catch((error) => {
+    //? Add condidates
+    const addCandidateTx1 = await contract.addCandidate("Alice");
+    await addCandidateTx1.wait();
+
+    const addCandidateTx2 = await contract.addCandidate("Bob");
+    await addCandidateTx2.wait();
+
+    console.log('====================================');
+    console.log("Condidates added successfully!");
+    console.log('====================================');
+}   
+
+main().catch((error) => {
     console.error(error);
     process.exit(1);
 });
