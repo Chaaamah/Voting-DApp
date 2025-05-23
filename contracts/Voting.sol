@@ -1,37 +1,43 @@
-// SPDX-License-Identifier: GPL-3.0
+pragma solidity >=0.8.2 <0.9.0;
 
-pragma solidity ^0.8.28;
-
-contract Voting{
-    struct Condidate{
-        string name;
-        uint voteCount;
+contract Voting
+{
+    struct Candidate
+    {
+        string name;  // candidate's name
+        string imageCID;
+        uint voteCount;  
     }
 
-    mapping (uint => Condidate) public condidates;
+    mapping (uint => Candidate) public candidates;
     mapping (address => bool) public hasVoted;
-    uint public numberOfCondidates;
-    address public owner;
-
-    modifier onlyOwner(){
-        require(msg.sender == owner, "Only the owner can perform this action");
-        _;
-    }
     
-     
-    constructor() {
+    uint public candidateCount = 0;
+    address public owner;  
+
+    modifier onlyOwner()
+    {
+        require(msg.sender == owner,"only the owner can call this function.");_;
+    }
+
+    constructor()
+    {
         owner = msg.sender;
     }
-      
-    function addCandidate(string memory _name) public onlyOwner{
-           condidates[numberOfCondidates] = Condidate(_name, 0);
-           numberOfCondidates++;
+
+    function addCandidate(string memory _name,string memory _imageCID) public onlyOwner
+    {
+        candidates[candidateCount] = Candidate(_name,_imageCID,0);
+        candidateCount++;
     }
 
-    function vote(uint _condidateId) public {
-        require(!hasVoted[msg.sender], "You have already voted");
-        require(_condidateId < numberOfCondidates, "Invalid condidate id");
+    
+    function vote(uint _candidateId) public
+    {
+        require(!hasVoted[msg.sender], "You have already voted.");
+        require (_candidateId < candidateCount, "Invalide Candidate");
         hasVoted[msg.sender] = true;
-        condidates[_condidateId].voteCount++;
+        candidates [_candidateId].voteCount += 1;
     }
+
 }

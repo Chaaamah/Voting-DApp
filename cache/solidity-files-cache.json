@@ -1,45 +1,9 @@
 {
   "_format": "hh-sol-cache-2",
   "files": {
-    "C:\\Users\\microsoft\\OneDrive\\Desktop\\Studies\\Stockage des donnees\\TP-DAPPS\\contracts\\Lock.sol": {
-      "lastModificationDate": 1744990771147,
-      "contentHash": "7eee587c347fe6b1de50c96688cb9477",
-      "sourceName": "contracts/Lock.sol",
-      "solcConfig": {
-        "version": "0.8.28",
-        "settings": {
-          "evmVersion": "paris",
-          "optimizer": {
-            "enabled": false,
-            "runs": 200
-          },
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          }
-        }
-      },
-      "imports": [],
-      "versionPragmas": [
-        "^0.8.28"
-      ],
-      "artifacts": [
-        "Lock"
-      ]
-    },
     "C:\\Users\\microsoft\\OneDrive\\Desktop\\Studies\\Stockage des donnees\\TP-DAPPS\\contracts\\Voting.sol": {
-      "lastModificationDate": 1746195875553,
-      "contentHash": "6d8b40beadf320e704a5bb16dee01f7e",
+      "lastModificationDate": 1747986787236,
+      "contentHash": "ceb12c51c31dc9bb9e98373c7882fc76",
       "sourceName": "contracts/Voting.sol",
       "solcConfig": {
         "version": "0.8.28",
@@ -67,7 +31,7 @@
       },
       "imports": [],
       "versionPragmas": [
-        "^0.8.28"
+        ">=0.8.2 <0.9.0"
       ],
       "artifacts": [
         "Voting"

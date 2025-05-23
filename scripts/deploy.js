@@ -11,10 +11,10 @@ async function main() {
     console.log("Contract deployed to:", address);
 
     //? Add condidates
-    const addCandidateTx1 = await contract.addCandidate("Alice");
+    const addCandidateTx1 = await contract.addCandidate("Alice", "QmUjaQfkXtqnWSvtWs2CSPJf9r4AiZfLG3oamv2J4twZZP");
     await addCandidateTx1.wait();
 
-    const addCandidateTx2 = await contract.addCandidate("Bob");
+    const addCandidateTx2 = await contract.addCandidate("Bob", "QmYpqEod7na94o4GtdWN4iSUFJ6bWLAKCgHiEAoF7Z5RRD");
     await addCandidateTx2.wait();
 
     console.log('====================================');
